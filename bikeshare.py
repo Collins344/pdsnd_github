@@ -25,8 +25,8 @@ def get_filters():
             print('Please choose CITY from CITY DATA')
         else:
           break
-            
-             
+
+
     # TO DO: get user input for month (all, january, february, ... , june)
 
     months = ['january', 'february', 'march', 'april', 'may', 'june']
@@ -39,7 +39,7 @@ def get_filters():
 
 
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
-       
+
     days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
     while True:
         day = input('Enter a day of the week or all days ').lower()
@@ -121,7 +121,7 @@ def station_stats(df):
 
     common_combo=df.groupby(['Start Station', 'End Station']).size().nlargest(1)
     print('Most Commonly Used Combination of Start and End Stations is', common_combo)
-                          
+
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -163,7 +163,7 @@ def user_stats(df):
 
     gender_count = df['Gender'].value_counts()
     print('The Counts for Gender Are ', gender_count)
-    
+
 
     # TO DO: Display earliest, most recent, and most common year of birth
 
@@ -184,12 +184,12 @@ def display_data(df):
     while view_data.lower() == 'yes':
         print(df.iloc[start_loc:start_loc+5])
         start_loc += 5
-        view_display = input('Do you wish to continue?: ' ).lower()               
+        view_display = input('Do you wish to continue?: ' ).lower()
         if view_display.lower() != 'yes':
-            break   
-    
+            break
+
 def main():
-       
+
     while True:
         city, month, day = get_filters()
         df = load_data(city, month, day)
@@ -199,18 +199,18 @@ def main():
         trip_duration_stats(df)
         user_stats(df)
         display_data(df)
-        
+
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
-      
+
 
 
 if __name__ == "__main__":
 	main()
-    
-#Other Sources
+
+#Names of Other Sources
 #https://knowledge.udacity.com/questions/611448
 #https://knowledge.udacity.com/questions/611379
 #Several other knowledge questions while searching for similar questions to mine
