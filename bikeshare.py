@@ -210,7 +210,7 @@ def main():
 if __name__ == "__main__":
 	main()
 
-#Names of Other Sources
+#All Names of Other Sources
 #https://knowledge.udacity.com/questions/611448
 #https://knowledge.udacity.com/questions/611379
 #Several other knowledge questions while searching for similar questions to mine
